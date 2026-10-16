@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp 20/10 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="floating-stickers" aria-hidden="true">
+    <span class="sticker sticker-one">💗</span>
+    <span class="sticker sticker-two">🌷</span>
+    <span class="sticker sticker-three">⭐</span>
+    <span class="sticker sticker-four">🎀</span>
+    <span class="sticker sticker-five">🧸</span>
+  </div>
+
+  <main class="page">
+    <header class="intro">
+      <p class="eyebrow">A LITTLE GIFT FOR YOU</p>
+      <h1>Chúc mừng ngày <span>20/10</span> 🌸</h1>
+      <p class="subtitle">
+        Có một món quà nhỏ đang chờ bạn mở ra đó!
+      </p>
+    </header>
+
+    <section class="gift-area">
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+
+          <div class="letter">
+            <div class="letter-inner">
+              <div class="letter-sparkle">✨ 💌 ✨</div>
+              <p class="letter-small">GỬI ĐẾN</p>
+              <h2 id="recipientName">Bạn nữ dễ thương</h2>
+              <div class="letter-divider">♡ ♡ ♡</div>
+
+              <p id="typedGreeting" class="typed-greeting"></p>
+
+              <div class="secret-box" id="secretBox" hidden>
+                <p class="secret-label">
+                  🤫 BÍ MẬT DÀNH RIÊNG CHO BẠN
+                </p>
+                <p id="secretMessage"></p>
+              </div>
+
+              <p class="signature">
+                Thân gửi,
+                <span>người gửi lời chúc 💗</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">💗</div>
+        </div>
+      </div>
+
+      <p id="hint" class="hint">
+        Nhấn nút bên dưới để mở món quà nhé!
+      </p>
+
+      <button id="openButton" class="open-button">
+        💌 Mở thiệp của bạn
+      </button>
+
+      <p id="errorMessage" class="error-message" hidden></p>
+    </section>
+
+    <footer class="footer">
+      <p>Gửi yêu thương đến những cô gái tuyệt vời 🌷</p>
+      <span>Made with ♡ for 20/10</span>
+    </footer>
+  </main>
+
+  <div id="petalLayer" class="petal-layer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
