@@ -1,414 +1,544 @@
 
+"use strict";
+
 /* =========================================
-   1. DANH SÁCH NGƯỜI NHẬN VÀ LỜI CHÚC
+   PETAL & POETRY — 20/10
+   36 người nhận, một website duy nhất
 ========================================= */
 
-const danhSachNguoiNhan = {
-    C21: {
-        ten: "Lê Nguyễn Thanh Xuân",
-        loiChuc: "Chúc Thanh Xuân luôn xinh đẹp, vui vẻ, tự tin và gặp thật nhiều điều may mắn. Mong mỗi ngày của bạn đều ngập tràn tiếng cười!"
-    },
-    C22: {
-        ten: "Kim Anh",
-        loiChuc: "Chúc Kim Anh luôn rạng rỡ, hạnh phúc và gặp nhiều điều tốt đẹp. Mong bạn luôn giữ được nụ cười thật tươi của mình nhé!"
-    },
-    C23: {
-        ten: "Trâm Anh",
-        loiChuc: "Chúc Trâm Anh có một ngày 20/10 thật vui vẻ, nhận được nhiều yêu thương và luôn tỏa sáng theo cách riêng của mình!"
-    },
-    C24: {
-        ten: "Đặng Ngọc Vân Anh",
-        loiChuc: "Chúc Vân Anh luôn xinh xắn, học tập thật tốt và có thật nhiều niềm vui. Mong mọi điều dễ thương nhất sẽ đến với bạn!"
-    },
-    C27: {
-        ten: "Nguyễn Trần Như Hạ",
-        loiChuc: "Chúc Như Hạ luôn vui vẻ, bình an và tự tin theo đuổi những điều mình yêu thích. Chúc bạn có một ngày 20/10 thật đáng nhớ!"
-    },
-    C28: {
-        ten: "Phạm Thu Hằng",
-        loiChuc: "Chúc Thu Hằng luôn xinh đẹp, hạnh phúc, học tốt và gặp nhiều may mắn. Mong bạn lúc nào cũng được yêu thương và trân trọng!"
-    },
-    C210: {
-        ten: "Phạm Nguyễn Uyên Nhi",
-        loiChuc: "Chúc Uyên Nhi luôn đáng yêu, vui vẻ và tràn đầy năng lượng tích cực. Mong những dự định của bạn đều thuận lợi và thành công!"
-    },
-    C212: {
-        ten: "Lưu Ly",
-        loiChuc: "Chúc Lưu Ly luôn rạng rỡ như ánh nắng, hạnh phúc như những đóa hoa và có thật nhiều kỷ niệm đẹp trong tuổi trẻ!"
-    },
-    C213: {
-        ten: "Nguyễn Bào Hiểu Minh",
-        loiChuc: "Chúc Hiểu Minh luôn mạnh mẽ, vui vẻ và tự tin. Mong bạn luôn gặp những người tốt, những điều tốt và có thật nhiều niềm vui!"
-    },
-    C214: {
-        ten: "Ngô Thị Tuyết Nga",
-        loiChuc: "Chúc Tuyết Nga có một ngày 20/10 thật ngọt ngào. Mong bạn luôn xinh đẹp, bình an, học tốt và luôn mỉm cười thật nhiều!"
-    },
-    C215: {
-        ten: "Vũ Ánh Ngọc",
-        loiChuc: "Chúc Ánh Ngọc luôn tỏa sáng, gặp nhiều may mắn và có những ngày tháng thật đáng nhớ. Mong mọi điều tốt đẹp luôn đồng hành cùng bạn!"
-    },
-    C216: {
-        ten: "Nghiêm Thị Nguyệt Nhi",
-        loiChuc: "Chúc Nguyệt Nhi luôn dịu dàng, vui vẻ và hạnh phúc. Mong bạn có đủ tự tin để thực hiện mọi mục tiêu mình đã đặt ra!"
-    },
-    C217: {
-        ten: "Thảo Nhi",
-        loiChuc: "Chúc Thảo Nhi luôn xinh tươi, đáng yêu và gặp nhiều điều bất ngờ thú vị. Chúc bạn một ngày 20/10 ngập tràn niềm vui!"
-    },
-    C218: {
-        ten: "Nguyễn Đỗ Triệu Vy",
-        loiChuc: "Chúc Triệu Vy luôn tự tin, rạng rỡ và thành công trên con đường mình chọn. Mong những nỗ lực của bạn sẽ được đền đáp xứng đáng!"
-    },
-    C219: {
-        ten: "Tuyết Nhi",
-        loiChuc: "Chúc Tuyết Nhi luôn vui vẻ, xinh đẹp và hạnh phúc. Mong mỗi ngày của bạn đều có một lý do thật đáng yêu để mỉm cười!"
-    },
-    C220: {
-        ten: "Đỗ Thị Quỳnh Như",
-        loiChuc: "Chúc Quỳnh Như luôn bình an, học tập thuận lợi và có thật nhiều trải nghiệm đẹp. Mong bạn luôn được mọi người yêu quý!"
-    },
-    C221: {
-        ten: "Đinh Thúy Quỳnh",
-        loiChuc: "Chúc Thúy Quỳnh luôn xinh đẹp, vui vẻ và tràn đầy sức sống. Mong bạn có một ngày 20/10 thật đặc biệt và đáng nhớ!"
-    },
-    C222: {
-        ten: "Nguyễn Hoàng Phương Thanh",
-        loiChuc: "Chúc Phương Thanh luôn tự tin, hạnh phúc và đạt được những điều mình mong muốn. Mong nụ cười luôn ở trên môi bạn!"
-    },
-    C224: {
-        ten: "Vũ Nguyễn Thanh Thảo",
-        loiChuc: "Chúc Thanh Thảo luôn vui vẻ, gặp nhiều may mắn và có thật nhiều kỷ niệm đẹp. Mong cuộc sống của bạn luôn ngập tràn yêu thương!"
-    },
-    C225: {
-        ten: "Phương Thảo",
-        loiChuc: "Chúc Phương Thảo luôn tươi tắn, đáng yêu và học tập thật tốt. Mong những điều nhỏ bé mỗi ngày cũng khiến bạn hạnh phúc!"
-    },
-    C226: {
-        ten: "Huỳnh Thị Anh Thư",
-        loiChuc: "Chúc Anh Thư luôn mạnh mẽ, xinh đẹp và tự tin. Mong bạn luôn được trân trọng, gặp nhiều may mắn và có thật nhiều niềm vui!"
-    },
-    C227: {
-        ten: "Võ Thư",
-        loiChuc: "Chúc Võ Thư có một ngày 20/10 thật vui vẻ, nhận được nhiều lời chúc dễ thương và luôn tỏa sáng theo cách của riêng mình!"
-    },
-    C228: {
-        ten: "Nguyễn Phạm Hoài Thương",
-        loiChuc: "Chúc Hoài Thương luôn bình an, hạnh phúc và gặp nhiều điều tốt đẹp. Mong những ước mơ của bạn từng bước trở thành hiện thực!"
-    },
-    C229: {
-        ten: "Vũ Ngọc Phương Thùy",
-        loiChuc: "Chúc Phương Thùy luôn xinh đẹp, vui vẻ và tràn đầy năng lượng. Mong bạn có thật nhiều cơ hội tốt và những người bạn tuyệt vời!"
-    },
-    C230: {
-        ten: "Nguyễn Thị Bích Thùy",
-        loiChuc: "Chúc Bích Thùy luôn rạng rỡ, bình an và thành công. Mong bạn luôn giữ được sự tự tin và niềm vui trong từng ngày!"
-    },
-    C231: {
-        ten: "Nguyễn Xuân Ánh Tiên",
-        loiChuc: "Chúc Ánh Tiên luôn tỏa sáng, hạnh phúc và gặp nhiều may mắn. Mong ngày 20/10 của bạn thật ngọt ngào với nhiều bất ngờ dễ thương!"
-    },
-    C232: {
-        ten: "Lê Thị Huyền Trâm",
-        loiChuc: "Chúc Huyền Trâm luôn vui vẻ, học tốt và gặp nhiều điều thuận lợi. Mong bạn luôn được yêu thương và có thật nhiều kỷ niệm đẹp!"
-    },
-    C233: {
-        ten: "Trịnh Thị Huế Trân",
-        loiChuc: "Chúc Huế Trân luôn xinh đẹp, tự tin và hạnh phúc. Mong mọi cố gắng của bạn đều mang lại kết quả tốt đẹp!"
-    },
-    C234: {
-        ten: "Trần Lê Phương Uyên",
-        loiChuc: "Chúc Phương Uyên luôn rạng rỡ, vui vẻ và gặp nhiều may mắn. Mong mỗi ngày đều mang đến cho bạn những niềm vui bất ngờ!"
-    },
-    C235: {
-        ten: "Hồ Trần Thị Nhã Vy",
-        loiChuc: "Chúc Nhã Vy luôn hạnh phúc, xinh tươi và tự tin với chính mình. Mong bạn có một ngày 20/10 thật nhiều hoa và lời chúc tốt đẹp!"
-    },
-    C236: {
-        ten: "Như Ý",
-        loiChuc: "Chúc Như Ý mọi điều như ý, luôn vui vẻ, bình an và thành công. Mong những điều bạn mong chờ sẽ sớm trở thành hiện thực!"
-    },
-    C238: {
-        ten: "Nguyễn Mỹ Phương",
-        loiChuc: "Chúc Mỹ Phương luôn xinh đẹp, vui vẻ và gặp thật nhiều may mắn. Mong bạn luôn giữ được sự lạc quan và nụ cười rạng rỡ!"
-    },
-    C240: {
-        ten: "Đinh Thị Tường Lan",
-        loiChuc: "Chúc Tường Lan luôn bình an, hạnh phúc và học tập thuận lợi. Mong bạn có một ngày 20/10 ngập tràn những điều đáng yêu!"
-    },
-    C242: {
-        ten: "Nguyễn Phương Dung",
-        loiChuc: "Chúc Phương Dung luôn vui vẻ, tự tin và thành công. Mong mọi ngày của bạn đều có thêm những lý do để mỉm cười!"
-    },
-    Huit01: {
-        ten: "Nguyễn Thuỳ Dung",
-        loiChuc: "Chúc Thuỳ Dung luôn xinh đẹp, bình an và gặp nhiều điều may mắn. Mong hành trình học tập của bạn thật thuận lợi và nhiều niềm vui!"
-    },
-    Huit02: {
-        ten: "Bùi Thị Huyền Hoà",
-        loiChuc: "Chúc Huyền Hoà luôn hạnh phúc, rạng rỡ và đạt được những điều mình mong muốn. Chúc bạn một ngày 20/10 thật ngọt ngào!"
+/*
+  QUY ƯỚC MÃ:
+  Số 1  -> C201
+  Số 2  -> C202
+  Số 14 -> C214
+  Huit01 và Huit02 giữ nguyên.
+
+  Mỗi người có:
+  name   = tên hiển thị
+  wish   = lời chúc trên thiệp
+  secret = thông điệp bí mật riêng
+*/
+
+const recipients = {
+  C201: {
+    name: " Thanh Xuân",
+    wish: "Chúc Thanh Xuân luôn rạng rỡ như chính cái tên của mình. Mong mỗi ngày của cậu đều có niềm vui, những điều mới mẻ và thật nhiều người yêu thương.",
+    secret: "Lên đại học mong bạn sẽ có thêm những năm tháng vui vẻ và nhiều kỉ niệm , cảm ơn bạn đã đồng hành cũng mình trong suốt cấp 3."
+  },
+
+  C202: {
+    name: "Kim Anh",
+    wish: "Chúc Kim Anh có một ngày 20/10 thật ngọt ngào, luôn xinh đẹp, tự tin và gặp thật nhiều điều may mắn.",
+    secret: "Kim Anh lên đại học đừng quên tui nha , được ngồi cùng bàn với Kim Anh cho tui nhiều kỉ niệm lắm đó , giàu đừng quên tui."
+  },
+
+  C203: {
+    name: "Trâm Anh",
+    wish: "Chúc Trâm Anh có một ngày 20/10 thật ý nghĩa , hạnh phúc và vui vẻ nhá.",
+    secret: "Không biết Trâm Anh hiện tại thế nào nhưng mà cũng mong Trâm Anh sẽ gặp được nhiều may mắn và đạt được những thứ mà mình mong muốn (giàu đừng quên t)."
+  },
+
+  C204: {
+    name: " Vân Anh",
+    wish: "Chúc Vân Anh một ngày 20/10 ngập tràn hoa, quà và những lời yêu thương.",
+    secret: "Cảm ơn vì đã cũng mình đồng hành trong khoảng thời gian ngắn này , mong Vân Anh sau này sẽ đạt được thành công siu to lớn."
+  },
+
+  C207: {
+    name: "Như Hạ",
+    wish: "Chúc Như Hạ sẽ có 1 ngày 20/10 thật hạnh phúc và ý nghĩa nhá.",
+    secret: "Mong Hạ sẽ có được nhiều thành công và con đường học tập thuận lợi nè."
+  },
+
+  C208: {
+    name: "Thu Hằng",
+    wish: "Chúc Thu Hằng sẽ có 1 ngày 20/10 thật ý nghĩa và có nhiều hoa.",
+    secret: "Mong Hằng lên đại học vẫn sẽ vui vẻ và nhận thêm nhiều điều ý nghĩa ."
+  },
+
+  C210: {
+    name: "Uyên Nhi",
+    wish: "Chúc Uyên Nhi một ngày 20/10 thật đáng nhớ và vui vẻ.",
+    secret: "Chúc Nhi sẽ thành công , con đường học tập sẽ thuận lợi ( giàu đừng quên t)."
+  },
+
+  C212: {
+    name: "Lưu Ly",
+    wish: "Chúc Lưu Ly sẽ có được 1 ngày 20/10 thật ý nghĩa và hạnh phúc.",
+    secret: "Mong bạn sẽ thuận lợi và gặp nhiều may mắn trên con đường học tập cũng như công việc sau này nhá."
+  },
+
+  C213: {
+    name: "Hiểu Minh",
+    wish: "Chúc Hiểu Minh có một ngày 20/10 vui vẻ , luôn cười tươi.",
+    secret: "Mong Minh sẽ luôn cười tươi , gặp thật nhiều may mắn từ học tập đến công việc."
+  },
+
+  C214: {
+    name: "Tuyết Nga",
+    wish: "Chúc Tuyết Nga có một ngày 20/10 thật sự ý nghĩa , cười nhiều lên nhá.",
+    secret: "Cảm ơn vì đã trở thành 1 phần thanh xuân của tui dù khoảng thời gian không dài , cảm ơn vì đã cho tui nhiều kỉ niệm . Nhớ cười nhiều và vui vẻ hơn nha tyfciml."
+  },
+
+  C215: {
+    name: "Ánh Ngọc",
+    wish: "Chúc Ánh Ngọc 20/10 sẽ có nhiều quà và hoa nhá.",
+    secret: "Mong gặp sẽ gặp thuận lợi trong học tập và công việc sau này , ngồi cùng bàn đã cho tui nhiều kỉ niệm lắm (giàu đừng quên t nha)."
+  },
+
+  C216: {
+    name: "Nguyệt Nhi",
+    wish: "Chúc Nguyệt Nhi 20/10 sẽ có nhiều quà và hoa nhá.",
+    secret: "Mong Nhi sẽ thuận lợi trên con đường học tập và làm việc sau này nè ."
+  },
+
+  C217: {
+    name: "Thảo Nhi",
+    wish: "Chúc Thảo Nhi 20/10 sẽ có nhiều tiếng cười và hạnh phúc.",
+    secret: "Mong Nhi sẽ gặp nhiều may mắn , hạnh phúc hơn nữa nhá."
+  },
+
+  C218: {
+    name: "Nguyễn Đỗ Triệu Vy",
+    wish: "Chúc Triệu Vy có 1 ngày 20/10 thật vui vẻ và đầy hạnh phúc.",
+    secret: "Mong Vy sẽ luôn nổ lực thật nhiều để đạt được thành công mà mình mong muốn nhá ."
+  },
+
+  C219: {
+    name: "Tuyết Nhi",
+    wish: "Chúc Tuyết Nhi có một ngày 20/10 thật vui vẻ và đầy hạnh phúc nhá.",
+    secret: "Mong Nhi sẽ đạt được nhiều thành công trong công việc và học tạpa , giữ sức khoẻ nhá."
+  },
+
+  C220: {
+    name: "Quỳnh Như",
+    wish: "Chúc Quỳnh Như sẽ có 1 ngày 20/10 thật hạnh phúc và vui vẻ, siêu nhiều hoa.",
+    secret: "Mong Như sẽ luôn cười tươi như lúc còn học chung , học tập và việc làm trở nên thuận lợi hơn."
+  },
+
+  C221: {
+    name: " Thúy Quỳnh",
+    wish: "Chúc Thúy Quỳnh 20/10 này sẽ có được nhiều may mắn , hạnh phúc tràn đầy.",
+    secret: "Mong Quỳnh sẽ có 1 cuộc sống học tập và làm việc thuận lợi hơn , giữ sức khoẻ nhá."
+  },
+
+  C222: {
+    name: " Phương Thanh",
+    wish: "Chúc Phương Thanh sẽ có 1 ngày 20/10 thật đáng nhớ và hạnh phúc.",
+    secret: "Mong Thanh sẽ gặp thêm nhiều người bạn mới tuyệt vời như t , giữ sức khoẻ nhá."
+  },
+
+  C224: {
+    name: "Vũ Nguyễn Thanh Thảo",
+    wish: "Chúc Thanh Thảo sẽ có 1 ngày 20/10 thật đáng nhớ và được tặng nhiều hoa.",
+    secret: "Được Thảo làm lớp trưởng và dẫn dắt làm tui có nhiều kỉ niệm mặc dù khoảng thời gian không dài , mong Thảo sau này giữ gìn sức khoẻ."
+  },
+
+  C225: {
+    name: "Phương Thảo",
+    wish: "Phương Thảo ơi, chúc cậu một ngày 20/10 thật nhiều hoa xinh, quà dễ thương và niềm vui bất ngờ. Mong mỗi ngày đều nhẹ nhàng và ngọt ngào với cậu.",
+    secret: "Mong cậu sẽ luôn giữ được sự hồn nhiên, biết tận hưởng hiện tại và không ngại mở lòng đón nhận những điều tốt đẹp đang chờ ở phía trước."
+  },
+
+  C226: {
+    name: " Anh Thư",
+    wish: "Chúc Anh Thư sẽ có một ngày 20/10 thật hạnh phúc và nhận dược nhiều hoa.",
+    secret: "Mong Thư luôn được làm những điều khiến mình tự hào, được ở cạnh người khiến mình thoải mái và được trân trọng cả khi vui vẻ lẫn lúc chưa ổn."
+  },
+
+  C227: {
+    name: "Võ Thư",
+    wish: "Chúc Thư  ngày 20/10 sẽ đầy sự ấm áp và dễ thương .",
+    secret: "Mong Thư sẽ gặp nhiều may mắn trong học tập và công việc , giữ gìn sức khoẻ nhá."
+  },
+
+  C228: {
+    name: " Hoài Thương",
+    wish: "Chúc Hoài Thương có một ngày 20/10 thật ấm áp và được nhiều hoa  .",
+    secret: "."
+  },
+
+  C229: {
+    name: "Phương Thùy",
+    wish: "Chúc Phương Thùy có 1 ngày 20/10 thật ấm áp và sẽ nhận được nhiều hoa.",
+    secret: "Chúc Thuỳ sẽ gặp được 1 chàng bạch mã hoàng tử tuyệt vời , sau này giàu đừng quên t nha."
+  },
+
+  C230: {
+    name: " Bích Thùy",
+    wish: "Chúc Bích Thùy sẽ nhận được nhiều sự hạnh phúc vào 20/10 này .",
+    secret: "."
+  },
+
+  C231: {
+    name: "Ánh Tiên",
+    wish: "Chúc Ánh Tiên 20/10 này sẽ thật hạnh phúc và nhận được nhiều hoa.",
+    secret: "Mong Tiên sẽ luôn hạnh phúc với người yêu của Tiên nhá hehe , cưới nhớ mời t."
+  },
+
+  C232: {
+    name: "Huyền Trâm",
+    wish: "Chúc Huyền Trâm có một ngày 20/10 bình an và trần ngập hạnh phúc .",
+    secret: "Mong Trâm sẽ gặp nhiều niềm vui trên đại học và sẽ học tập suông sẻ , giữ gìn sức khoẻ nhá."
+  },
+
+  C233: {
+    name: " Huế Trân",
+    wish: "Chúc Huế Trân sẽ có một ngày 20/10 thật ý nghĩa , sẽ thật hạnh phúc.",
+    secret: "Cảm ơn đã làm 1 tổ trưởng cho t , mong Huế sẽ gặp được 1 chàng bạch mã hoàng tử tuyệt vời , hehee."
+  },
+
+  C234: {
+    name: "Phương Uyên",
+    wish: "Chúc Phương Uyên 20/10 này sẽ hạnh phúc và nhận được nhiều hoa.",
+    secret: "Cảm ơn vì đã là 1 người bạn cùng bàn tốt với t , giữ gìn sức khoẻ nhá ."
+  },
+
+  C235: {
+    name: "Hồ Trần Thị Nhã Vy",
+    wish: "Chúc Nhã Vy luôn vui vẻ, xinh đẹp và tự tin theo đuổi những điều mình yêu thích. Mong cậu nhận được thật nhiều yêu thương trong ngày đặc biệt này.",
+    secret: "Mong cậu luôn nhớ rằng sự khác biệt của mình là điều đáng trân trọng. Không cần trở thành bản sao của ai khác để có một cuộc sống thật rực rỡ."
+  },
+
+  C236: {
+    name: "Như Ý",
+    wish: "Chúc Như Ý mọi điều như ý, niềm vui như hoa nở và may mắn ghé thăm mỗi ngày. Mong cậu luôn khỏe mạnh, xinh đẹp và gặp nhiều điều bất ngờ dễ thương.",
+    secret: "Tên cậu là Như Ý, vậy mong những điều cậu thật lòng mong muốn sẽ dần thành hiện thực. Và nếu đôi khi mọi chuyện khác dự tính, mong cậu vẫn tìm được một con đường đẹp."
+  },
+
+  C238: {
+    name: "Mỹ Phương",
+    wish: "Chúc Mỹ Phương có một ngày 20/10 thật hạnh phúc và bình an.",
+    secret: "Mong Vy sẽ luôn giữ mãi nụ cười tươi như hồi cấp 3 , giữ gìn sức khoẻ nhá."
+  },
+
+  C240: {
+    name: "Đinh Thị Tường Lan",
+    wish: "Chúc Tường Lan luôn duyên dáng, hạnh phúc và tràn đầy năng lượng. Mong ngày 20/10 của cậu thật đặc biệt và chặng đường phía trước sẽ có nhiều điều đáng mong chờ.",
+    secret: "Mong cậu luôn có thể sống chậm lại khi cần, lắng nghe bản thân và dành thời gian cho những điều khiến trái tim cảm thấy ấm áp."
+  },
+
+  C241: {
+    name: "Nguyễn Phương Dung",
+    wish: "Chúc Phương Dung 20/10 này sẽ nhận dược nhiều hoa, nhiều niềm vui.",
+    secret: "Chúc Dung sẽ thành công trên con đường mình chọn , sẽ giữ mãi được nụ cười tươi hehe."
+  },
+
+  Huit01: {
+    name: "Bùi Thị Huyền Hoà",
+    wish: "Chúc Huyền Hoà sẽ có một ngày 20/10 tràn đầy niềm vui và hạnh phúc nhá.",
+    secret: "Mong Huyền Hoà sẽ học tốt , gặp được nhiều người bạn để lại những kỉ niệm đẹp ở HUIT nàyyy."
+  },
+
+  Huit02: {
+    name: "Nguyễn Thuỳ Dung",
+    wish: "Chúc Thuỳ Dung sẽ có 1 ngày 20/10 thật ý nghĩa và đáng nhớ.",
+    secret: "Mong Thuỳ Dung (Tiểu đội phó) sẽ có thêm những kỉ niệm đẹp ở HUIT này cùng với nhưng người bạn tuyệt vời giống tui , hehe ."
+  }
+};
+
+
+/* =========================================
+   LẤY THÔNG TIN NGƯỜI NHẬN TỪ URL
+========================================= */
+
+const params = new URLSearchParams(window.location.search);
+const requestedId = params.get("id") || "";
+const recipient = recipients[requestedId] || null;
+
+const recipientPreview = document.getElementById("recipient-preview");
+const letterName = document.getElementById("letter-name");
+const letterBody = document.getElementById("letter-body");
+const secretText = document.getElementById("secret-text");
+
+const envelopeScene = document.getElementById("envelope-scene");
+const openButton = document.getElementById("open-letter");
+const openButtonText = document.getElementById("open-button-text");
+const envelopeHint = document.getElementById("envelope-hint");
+
+const messageSection = document.getElementById("message-section");
+const revealSecretButton = document.getElementById("reveal-secret");
+const secretMessage = document.getElementById("secret-message");
+const replayButton = document.getElementById("replay-letter");
+const toast = document.getElementById("toast");
+
+let isOpened = false;
+let secretOpened = false;
+let typingTimer = null;
+let toastTimer = null;
+let motionReduced = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+
+/* =========================================
+   KHỞI TẠO THIỆP
+========================================= */
+
+function initializeCard() {
+  if (recipient) {
+    recipientPreview.textContent = recipient.name;
+    letterName.textContent = recipient.name;
+    letterBody.textContent = "";
+    secretText.textContent = recipient.secret;
+
+    document.title = "Gửi " + recipient.name + " ♡";
+  } else {
+    recipientPreview.textContent = "Một người thật đặc biệt";
+    letterName.textContent = "cậu";
+    letterBody.textContent =
+      "Chúc cậu có một ngày 20/10 thật vui vẻ, bình an, xinh đẹp và nhận được thật nhiều yêu thương.";
+
+    secretText.textContent =
+      "Mong những điều tốt đẹp sẽ luôn đồng hành cùng cậu. Chúc cậu có một ngày thật hạnh phúc.";
+
+    document.title = "Gửi cậu, một điều thật xinh đẹp ♡";
+
+    if (requestedId) {
+      showToast("Mã thiệp chưa đúng. Đây là lời chúc chung dành cho cậu nhé!");
     }
-};
+  }
+
+  createPetals();
+  createSparkles();
+}
 
 
 /* =========================================
-   2. LẤY THÔNG TIN NGƯỜI NHẬN
+   CÁNH HOA RƠI
 ========================================= */
 
-const thamSoURL = new URLSearchParams(window.location.search);
-const maNguoiNhan = thamSoURL.get("id");
+function createPetals() {
+  const layer = document.getElementById("petal-layer");
+  layer.replaceChildren();
 
-const nguoiNhan = danhSachNguoiNhan[maNguoiNhan] || {
-    ten: "Bạn nữ thân mến",
-    loiChuc:
-        "Chúc bạn luôn xinh đẹp, vui vẻ, bình an và gặp thật nhiều điều tốt đẹp. Mong mỗi ngày của bạn đều ngập tràn tiếng cười!"
-};
+  if (motionReduced) return;
+
+  // Giảm số lượng trên màn hình nhỏ để giữ độ mượt.
+  const mobile = window.matchMedia("(max-width: 600px)").matches;
+  const count = mobile ? 24 : 42;
+
+  const fragment = document.createDocumentFragment();
+
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+
+    petal.style.setProperty("--left", Math.random() * 100 + "%");
+    petal.style.setProperty("--size", (7 + Math.random() * 13) + "px");
+    petal.style.setProperty("--opacity", (0.35 + Math.random() * 0.5).toFixed(2));
+    petal.style.setProperty("--rotation", Math.random() * 360 + "deg");
+    petal.style.setProperty("--duration", (10 + Math.random() * 13) + "s");
+    petal.style.setProperty("--delay", (-Math.random() * 20) + "s");
+
+    fragment.appendChild(petal);
+  }
+
+  layer.appendChild(fragment);
+}
 
 
 /* =========================================
-   3. TẠO VƯỜN HOA BẰNG CSS
+   ÁNH SÁNG LẤP LÁNH
 ========================================= */
 
-let daTaoVuonHoa = false;
+function createSparkles() {
+  const layer = document.getElementById("sparkle-layer");
+  layer.replaceChildren();
 
-function createFlowerGarden() {
-    if (daTaoVuonHoa) return;
+  if (motionReduced) return;
 
-    daTaoVuonHoa = true;
+  const mobile = window.matchMedia("(max-width: 600px)").matches;
+  const count = mobile ? 14 : 25;
+  const fragment = document.createDocumentFragment();
 
-    const garden = document.createElement("div");
-    garden.className = "flower-garden";
-    garden.setAttribute("aria-hidden", "true");
+  for (let i = 0; i < count; i++) {
+    const sparkle = document.createElement("span");
+    sparkle.className = "sparkle";
 
-    document.body.appendChild(garden);
+    sparkle.style.setProperty("--left", Math.random() * 100 + "%");
+    sparkle.style.setProperty("--top", Math.random() * 100 + "%");
+    sparkle.style.setProperty("--size", (2 + Math.random() * 3) + "px");
+    sparkle.style.setProperty("--duration", (1.5 + Math.random() * 3) + "s");
+    sparkle.style.setProperty("--delay", (-Math.random() * 4) + "s");
 
-    const laTrenDienThoai = window.innerWidth <= 600;
+    fragment.appendChild(sparkle);
+  }
 
-    const flowers = laTrenDienThoai
-        ? [
-            { x: -8, size: 0.70, delay: 0.1, color: "pink" },
-            { x: 12, size: 0.56, delay: 0.6, color: "purple" },
-            { x: 78, size: 0.62, delay: 0.3, color: "peach" },
-            { x: 96, size: 0.72, delay: 0.8, color: "yellow" }
-        ]
-        : [
-            { x: -3, size: 0.78, delay: 0.1, color: "pink" },
-            { x: 11, size: 0.60, delay: 0.5, color: "purple" },
-            { x: 25, size: 0.84, delay: 0.3, color: "peach" },
-            { x: 76, size: 0.80, delay: 0.7, color: "purple" },
-            { x: 90, size: 0.62, delay: 0.2, color: "yellow" },
-            { x: 103, size: 0.86, delay: 0.9, color: "pink" }
-        ];
+  layer.appendChild(fragment);
+}
 
-    flowers.forEach((item) => {
-        const flower = document.createElement("div");
-        flower.className = `garden-flower ${item.color}`;
 
-        flower.style.left = `${item.x}%`;
-        flower.style.setProperty("--flower-size", item.size);
-        flower.style.setProperty("--delay", `${item.delay}s`);
+/* =========================================
+   THÔNG BÁO NHỎ
+========================================= */
 
-        flower.style.transform = `scale(${item.size})`;
-        flower.style.transformOrigin = "bottom center";
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
 
-        /* Thân hoa */
-        const stem = document.createElement("div");
-        stem.className = "flower-stem";
-        flower.appendChild(stem);
+  clearTimeout(toastTimer);
 
-        /* Hai chiếc lá */
-        const leafLeft = document.createElement("div");
-        leafLeft.className = "flower-leaf left";
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3500);
+}
 
-        const leafRight = document.createElement("div");
-        leafRight.className = "flower-leaf right";
 
-        flower.appendChild(leafLeft);
-        flower.appendChild(leafRight);
+/* =========================================
+   HIỆU ỨNG CHỮ HIỆN TỪNG KÝ TỰ
+========================================= */
 
-        /* Đầu hoa */
-        const head = document.createElement("div");
-        head.className = "flower-head";
+function typeText(element, text, speed = 28) {
+  clearTimeout(typingTimer);
+  element.textContent = "";
 
-        /* Lớp cánh hoa bên ngoài */
-        for (let i = 0; i < 12; i++) {
-            const petal = document.createElement("div");
-            petal.className = "flower-petal";
+  if (motionReduced) {
+    element.textContent = text;
+    return;
+  }
 
-            const angle = i * 30;
+  let index = 0;
 
-            petal.style.transform = `rotate(${angle}deg)`;
-            petal.style.setProperty(
-                "--petal-delay",
-                `${i * 0.06}s`
-            );
+  function typeNext() {
+    if (index >= text.length) return;
 
-            head.appendChild(petal);
-        }
+    // Array.from xử lý tiếng Việt và ký tự Unicode tốt hơn
+    // so với việc truy cập từng vị trí của chuỗi.
+    const characters = Array.from(text);
 
-        /* Lớp cánh hoa bên trong */
-        for (let i = 0; i < 9; i++) {
-            const petal = document.createElement("div");
-            petal.className = "flower-petal inner";
+    element.textContent += characters[index];
+    index++;
 
-            const angle = i * 40;
+    typingTimer = setTimeout(typeNext, speed);
+  }
 
-            petal.style.transform = `rotate(${angle}deg)`;
-            petal.style.setProperty(
-                "--petal-delay",
-                `${i * 0.08}s`
-            );
+  typeNext();
+}
 
-            head.appendChild(petal);
-        }
 
-        /* Nhụy hoa */
-        const center = document.createElement("div");
-        center.className = "flower-center";
-        head.appendChild(center);
+/* =========================================
+   MỞ PHONG BÌ
+========================================= */
 
-        flower.appendChild(head);
 
-        /* Ánh sáng lấp lánh quanh hoa */
-        for (let i = 0; i < 3; i++) {
-            const glow = document.createElement("div");
-            glow.className = "flower-glow";
+function openLetter() {
+  if (isOpened) {
+    return;
+  }
 
-            glow.style.left = `${20 + i * 25}%`;
-            glow.style.bottom = `${220 + i * 35}px`;
+  isOpened = true;
 
-            glow.style.setProperty(
-                "--spark-delay",
-                `${i * 0.7}s`
-            );
+  envelopeScene.classList.add("opened");
+  openButtonText.textContent = "Đã mở thư ♡";
+  envelopeHint.textContent = "Một lời chúc nhỏ, dành riêng cho cậu ♡";
 
-            flower.appendChild(glow);
-        }
+  openButton.disabled = true;
 
-        garden.appendChild(flower);
+  const wish = recipient
+    ? recipient.wish
+    : "Chúc cậu luôn vui vẻ, bình an, xinh đẹp và gặp thật nhiều điều tốt đẹp trong cuộc sống.";
+
+  const delay = motionReduced ? 0 : 850;
+
+  setTimeout(() => {
+    typeText(letterBody, wish, 23);
+    openButton.disabled = false;
+  }, delay);
+}
+
+
+
+/* =========================================
+   THÔNG ĐIỆP BÍ MẬT
+========================================= */
+
+function revealSecret() {
+  if (secretOpened) {
+    secretMessage.classList.remove("hidden");
+    secretMessage.scrollIntoView({
+      behavior: motionReduced ? "auto" : "smooth",
+      block: "center"
     });
+    return;
+  }
+
+  secretOpened = true;
+  secretMessage.classList.remove("hidden");
+
+  revealSecretButton.innerHTML =
+    "<span>♡</span> Thông điệp dành riêng cho cậu <span>♡</span>";
+
+  revealSecretButton.disabled = true;
+
+  if (!motionReduced) {
+    secretText.textContent = "";
+    typeText(secretText, recipient ? recipient.secret : (
+      "Mong những điều tốt đẹp sẽ luôn đồng hành cùng cậu. Chúc cậu có một ngày thật hạnh phúc."
+    ), 35);
+  }
+
+  setTimeout(() => {
+    revealSecretButton.disabled = false;
+  }, 500);
+
+  setTimeout(() => {
+    secretMessage.scrollIntoView({
+      behavior: motionReduced ? "auto" : "smooth",
+      block: "center"
+    });
+  }, 150);
 }
 
 
 /* =========================================
-   4. HIỆU ỨNG HIỆN LỜI CHÚC TỪNG CHỮ
+   ĐỌC LẠI THIỆP
 ========================================= */
 
-function typeWriter(element, text, speed = 38) {
-    if (!element) return;
+function replayLetter() {
+  clearTimeout(typingTimer);
 
-    element.textContent = "";
-    let index = 0;
+  isOpened = false;
+  secretOpened = false;
 
-    function typeNextCharacter() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
+  envelopeScene.classList.remove("opened");
+  messageSection.classList.add("hidden");
+  secretMessage.classList.add("hidden");
 
-            window.setTimeout(typeNextCharacter, speed);
-        }
-    }
+  openButton.disabled = false;
+  openButtonText.textContent = "Mở thư của cậu";
 
-    typeNextCharacter();
+  envelopeHint.textContent =
+    "Một điều dễ thương đang chờ cậu bên trong";
+
+  letterBody.textContent = "";
+  secretText.textContent = recipient
+    ? recipient.secret
+    : "Mong những điều tốt đẹp sẽ luôn đồng hành cùng cậu.";
+
+  revealSecretButton.disabled = false;
+  revealSecretButton.innerHTML =
+    "<span>✧</span> Mở thông điệp bí mật <span>✧</span>";
+
+  document.querySelector(".letter-section").scrollIntoView({
+    behavior: motionReduced ? "auto" : "smooth",
+    block: "start"
+  });
 }
 
 
 /* =========================================
-   5. KHỞI TẠO THIỆP
+   GẮN SỰ KIỆN
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-    /* Tìm các phần tử trên trang */
-    const nameElement = document.querySelector(
-        "#recipientName, #name, .recipient-name, .name"
-    );
+openButton.addEventListener("click", openLetter);
+revealSecretButton.addEventListener("click", revealSecret);
+replayButton.addEventListener("click", replayLetter);
 
-    const greetingElement = document.querySelector(
-        "#greetingText, #greeting, .greeting-text, .greeting"
-    );
 
-    const secretMessage = document.querySelector(
-        "#secretMessage, .secret-message"
-    );
+/* =========================================
+   KHỞI ĐỘNG
+========================================= */
 
-    const envelope = document.querySelector(
-        ".envelope-wrapper, .envelope"
-    );
+initializeCard();
 
-    const openButton = document.querySelector(
-        "#openBtn, #openEnvelope, .open-btn, .open-button"
-    );
-
-    /* Hiện tên người nhận */
-    if (nameElement) {
-        nameElement.textContent = nguoiNhan.ten;
-    }
-
-    /* Nếu chưa mở thiệp, ẩn lời nhắn bí mật */
-    if (secretMessage) {
-        secretMessage.classList.remove(
-            "show",
-            "visible",
-            "active"
-        );
-    }
-
-    let daMoThiep = false;
-
-    function openGreetingCard() {
-        if (daMoThiep) return;
-
-        daMoThiep = true;
-
-        /* Mở phong bì */
-        if (envelope) {
-            envelope.classList.add("open");
-        }
-
-        /* Đổi nội dung nút */
-        if (openButton) {
-            openButton.textContent = "Thiệp dành riêng cho bạn";
-            openButton.disabled = true;
-        }
-
-        /* Tạo vườn hoa */
-        createFlowerGarden();
-
-        /* Hiện lời chúc từng chữ */
-        if (greetingElement) {
-            window.setTimeout(function () {
-                typeWriter(
-                    greetingElement,
-                    `Chúc mừng ngày Phụ nữ Việt Nam 20/10, ${nguoiNhan.ten}! ${nguoiNhan.loiChuc}`,
-                    35
-                );
-            }, 500);
-        }
-
-        /* Hiện lời nhắn bí mật sau khi hoa nở */
-        if (secretMessage) {
-            window.setTimeout(function () {
-                secretMessage.classList.add("show");
-            }, 3000);
-        }
-    }
-
-    /* Bấm nút để mở thiệp */
-    if (openButton) {
-        openButton.addEventListener("click", openGreetingCard);
-    }
-
-    /* Cho phép bấm vào phong bì để mở */
-    if (envelope) {
-        envelope.addEventListener("click", function (event) {
-            if (
-                openButton &&
-                event.target.closest("button")
-            ) {
-                return;
-            }
-
-            openGreetingCard();
-        });
-    }
-});
